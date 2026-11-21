@@ -1,0 +1,18 @@
+{
+  "name": "barberbooking-backend",
+  "version": "1.0.0",
+  "description": "API y aplicación web de reservas para Estilo & Corte",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

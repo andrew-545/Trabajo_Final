@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111312">
+    <title>Estilo &amp; Corte | Agenda Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Estilo y Corte, inicio">
+        <span class="brand-mark">E<span>&amp;</span>C</span>
+        <span class="brand-name">ESTILO <span>&amp;</span> CORTE<small>BARBERÍA · DESDE 2018</small></span>
+      </a>
+      <span class="open-label"><i></i> AGENDA ABIERTA</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">TU ESTILO, A TU TIEMPO</p>
+          <h1>Un buen corte<br>cambia <em>todo.</em></h1>
+          <p class="hero-description">Reserva tu momento. Nosotros nos encargamos del resto.</p>
+        </div>
+        <div class="hero-stamp" aria-hidden="true"><span>BUEN<br>ESTILO<br>SIEMPRE</span><b>✳</b></div>
+      </section>
+
+      <section class="booking-card">
+        <nav class="tabs" aria-label="Vistas">
+          <button class="tab active" type="button" data-view="cliente">01 <span>AGENDAR CITA</span></button>
+          <button class="tab" type="button" data-view="agenda">02 <span>AGENDA DEL BARBERO</span></button>
+          <span class="tab-indicator"></span>
+        </nav>
+
+        <section class="view active" id="cliente-view">
+          <div class="section-heading">
+            <div><p class="eyebrow">RESERVA ONLINE</p><h2>Tu próxima visita</h2></div>
+            <span class="step-tag">PASO 01 — TUS DATOS</span>
+          </div>
+          <form id="reserva-form">
+            <div class="form-grid">
+              <label class="field field-wide">NOMBRE COMPLETO
+                <input name="cliente" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required>
+              </label>
+              <label class="field">TELÉFONO
+                <input name="telefono" type="tel" placeholder="300 000 0000" autocomplete="tel" required>
+              </label>
+              <label class="field">BARBERO
+                <select name="barberoId" id="barbero-select" required><option value="">Selecciona un barbero</option></select>
+              </label>
+              <label class="field field-wide">SERVICIO
+                <select name="servicioId" id="servicio-select" required><option value="">Selecciona un servicio</option></select>
+              </label>
+              <label class="field">FECHA
+                <input name="fecha" id="fecha-reserva" type="date" value="2026-11-14" required>
+              </label>
+              <label class="field">HORA DISPONIBLE
+                <select name="hora" id="hora-select" required></select>
+              </label>
+            </div>
+            <div class="form-footer">
+              <p>Al reservar, tu cita quedará <strong>confirmada</strong> al instante.</p>
+              <button class="button button-primary" type="submit">CONFIRMAR CITA <span>↗</span></button>
+            </div>
+          </form>
+          <div id="reserva-feedback" class="feedback" aria-live="polite"></div>
+        </section>
+
+        <section class="view" id="agenda-view">
+          <div class="section-heading">
+            <div><p class="eyebrow">PANEL DE BARBERO</p><h2>Agenda del día</h2></div>
+            <span class="step-tag">GESTIÓN DE CITAS</span>
+          </div>
+          <div class="agenda-filters">
+            <label class="field">BARBERO<select id="agenda-barbero"></select></label>
+            <label class="field">FECHA<input id="agenda-fecha" type="date" value="2026-11-14"></label>
+          </div>
+          <div class="summary-grid" id="resumen"></div>
+          <div class="appointment-list" id="agenda-list"></div>
+          <div id="agenda-feedback" class="feedback" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+    <footer><span>© 2026 ESTILO &amp; CORTE</span><span>HECHO PARA QUE TE VEAS BIEN <b>✳</b></span></footer>
+  </body>
+</html>
